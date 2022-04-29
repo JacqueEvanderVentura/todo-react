@@ -19,6 +19,9 @@ export default function reducer(state, action) {
     case ACTIONS.TOGGLE_STATUS:
       return state.map(todo=>todo.id=== action.payload.id?{...todo, isDone: !todo.isDone}:todo);
 
+    default:
+      return state;
+
     
   }
 }
