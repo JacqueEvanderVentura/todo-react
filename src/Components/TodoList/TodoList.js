@@ -45,8 +45,8 @@ export const TodoList = ({ todos, dispatch }) => {
                 />
               </td>
 
-              <td>{todo.isDone.toString()}</td>
-              
+              <td onClick={()=>dispatch({type:ACTIONS.TOGGLE_STATUS, payload:{id: todo.id}})}>{todo.isDone.toString()}</td>
+
             </tr>
           );
         })}

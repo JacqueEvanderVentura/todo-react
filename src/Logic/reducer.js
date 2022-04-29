@@ -15,5 +15,10 @@ export default function reducer(state, action) {
           ? { ...todo, description: action.payload.description }
           : todo
       );
+
+    case ACTIONS.TOGGLE_STATUS:
+      return state.map(todo=>todo.id=== action.payload.id?{...todo, isDone: !todo.isDone}:todo);
+
+    
   }
 }
