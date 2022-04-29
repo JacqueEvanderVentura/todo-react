@@ -1,33 +1,22 @@
-import { useEffect, useReducer } from "react";
+import { useState, useReducer } from "react";
 import "./App.css";
 import reducer from "./reducer";
 
-const DATA = ["item 1", "item 2", "item 3"];
 
-const initialState = {
-  items: [],
-};
+// const initialState = {
+//   items: [],                   <---- I'm not using initialState because this app won't need multiple states;
+// };
 
 function App() {
-  const [state, dispatch] = useReducer(reducer, initialState);
+  const [state, dispatch] = useReducer(reducer, []);
+  const [title, setTitle] = useState("");
+  const [description, setDescription] = useState("");
 
-  useEffect(() => {
-    dispatch({
-      type: "set_items",
-      payload: {
-        items: DATA,
-      },
-    });
-  },[]);
 
   return (
-    <div className="App">
-      <ul className="items-container">
-        {state.items.map((item) => (
-          <li key={item}>{item}</li>
-        ))}
-      </ul>
-    </div>
+    <>
+      <label>Title</label>
+    </>
   );
 }
 
