@@ -1,6 +1,5 @@
-import { useState, useReducer } from "react";
 import "./App.css";
-import reducer from "./reducer";
+import { TodoHome } from "./Views/TodoHome/TodoHome";
 
 
 // const initialState = {
@@ -8,14 +7,11 @@ import reducer from "./reducer";
 // };
 
 function App() {
-  const [state, dispatch] = useReducer(reducer, []);
-  const [title, setTitle] = useState("");
-  const [description, setDescription] = useState("");
 
 
   return (
     <>
-      <label>Title</label>
+      <TodoHome />
     </>
   );
 }
