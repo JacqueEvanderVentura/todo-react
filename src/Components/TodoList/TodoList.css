@@ -1,0 +1,43 @@
+@import "../../index.css";
+
+* {
+  margin: 0 auto;
+  text-align: center;
+}
+tr {
+  transition: 0.1s;
+}
+
+tr:nth-child(odd) {
+  background-color: #ccc;
+}
+tr:hover {
+  background: #9b9696;
+  transition: 0.3s;
+}
+th {
+  padding: 0.3rem;
+  background-color: #9AA8FF;
+  border-radius: 10px 10px 0px 0px;
+}
+td{
+    padding: .3vw;
+}
+
+table input {
+  text-align: center;
+  border: none;
+  background-color: #fffa;
+}
+
+input:focus {
+  outline: none;
+}
+
+.button-delete{
+    background-color: #FF6961;
+}
+
+.pointer {
+  cursor: pointer;
+}

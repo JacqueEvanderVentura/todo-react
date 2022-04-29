@@ -1,0 +1,13 @@
+
+header{
+    padding: .5vw;
+    min-height: fit-content;
+    width: 100vw;
+    background-color: #9FD1B4;
+    color: #FFF;
+    text-align: center;
+    margin: 0;
+}
+span{
+    font-family: 'Courier PS', monospace;
+}

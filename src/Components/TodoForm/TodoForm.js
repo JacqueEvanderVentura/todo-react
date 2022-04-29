@@ -20,16 +20,16 @@ export const TodoForm = () => {
 }
 console.log(todos); // Added this console.log so that you can check the object when it changes its value :)
   return (
-    <>
-      <form onSubmit={handleSubmit}>
-        <label htmlFor="inputTitle">Title</label>
+    <section>
+      <form onSubmit={handleSubmit} autoComplete="off">
+        <label htmlFor="inputTitle"><h2>Title</h2></label>
         <input value={title} onChange={(e)=>setTitle(e.target.value)} id="inputTitle" />
 
-        <label htmlFor="inputDescription">Description (optional)</label>
-        <textarea id="inputDescription" value={description} onChange={(e)=>setDescription(e.target.value)} />
+        <label htmlFor="inputDescription"><h2>Description <span style={{fontStyle: 'italic'}}>(optional)</span></h2></label>
+        <textarea id="inputDescription" value={description} rows={5} cols={30} onChange={(e)=>setDescription(e.target.value)} />
         <button>Add</button>
       </form>
       <TodoList todos={todos} dispatch={dispatch} />
-    </>
+    </section>
   );
 };
