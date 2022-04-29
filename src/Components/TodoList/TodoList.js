@@ -46,7 +46,8 @@ export const TodoList = ({ todos, dispatch }) => {
               </td>
 
               <td onClick={()=>dispatch({type:ACTIONS.TOGGLE_STATUS, payload:{id: todo.id}})}>{todo.isDone.toString()}</td>
-
+              
+              <td onClick={()=>dispatch({type: ACTIONS.DELETE_TODO, payload:{id:todo.id}})}><strong>DELETE</strong></td>
             </tr>
           );
         })}
