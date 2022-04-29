@@ -8,5 +8,12 @@ export default function reducer(state, action) {
     
     case ACTIONS.EDIT_TODO_TITLE:
       return state.map((todo) => action.payload.id === todo.id ? { ...todo, title: action.payload.title } : todo);
+
+    case ACTIONS.EDIT_TODO_DESCRIPTION:
+      return state.map((todo) =>
+        todo.id === action.payload.id
+          ? { ...todo, description: action.payload.description }
+          : todo
+      );
   }
 }

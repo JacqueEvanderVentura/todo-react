@@ -4,6 +4,7 @@ import { ACTIONS } from "../../Logic/actions";
 export const TodoList = ({ todos, dispatch }) => {
   return (
     <table border="1">
+
       <thead>
         <tr>
           <th>ID</th>
@@ -12,6 +13,7 @@ export const TodoList = ({ todos, dispatch }) => {
           <th>Status</th>
         </tr>
       </thead>
+      
       <tbody>
         {todos.map((todo) => {
           return (
@@ -30,9 +32,21 @@ export const TodoList = ({ todos, dispatch }) => {
                   }
                 />
               </td>
-              
-              <td>{todo.description}</td>
+
+              <td>
+                <input
+                  value={todo.description}
+                  onChange={(e) =>
+                    dispatch({
+                      type: ACTIONS.EDIT_TODO_DESCRIPTION,
+                      payload: { id: todo.id, description: e.target.value },
+                    })
+                  }
+                />
+              </td>
+
               <td>{todo.isDone.toString()}</td>
+              
             </tr>
           );
         })}
